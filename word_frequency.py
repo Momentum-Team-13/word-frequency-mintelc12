@@ -6,49 +6,59 @@ STOP_WORDS = [
 
 import string
 
-def print_word_freq(file):
-    """Read in 'file' and print out the frequency of words in that file. YOUR CODE GOES HERE"""
-    # print (f'Your file is: {file}')
-    with open(file) as open_file:
-        read_file = open_file.read()
-    print(read_file)
+#def print_word_freq(file):
+"""Read in `file` and print out the frequency of words in that file. Your code goes here."""
+    #print (f"Your file is: {file}")
+    #with open(file) as open_file:
+        #read_file = open_file.read()
+    #print(read_file)
+test_sentence = "How long, how long must we sing this song? How long?"
 
-    new_string = read_file.translate(str.maketrans("", "", string.punctuation))
-    print(new_string.lower())
-
-print_word_freq("praise_song_for_the_day.txt")
-
+new_string = test_sentence.translate(str.maketrans("", "", string.punctuation))
+print(test_sentence.lower())
 
 
+new_string = new_string.lower()
+words = new_string.split()
+unique = {"song": 1}
+# value = 1
+for word in words:
+    if word not in unique:
+        unique.update({word: 1}) 
+    else:
+        unique[word]
+        #{word: (value + 1)}
+        print(unique[word])
 
 
-#Testing import string below:
+    #new_string = new_string.split()
+    #for word in new_string:
+        #if word in STOP_WORDS:
+            #new_string = list(filter((word).__ne__, new_string))
+    #print(new_string)
 
-#a_string = '!hi. wh?at is the weat[h]er lik?e.'
-#new_string = a_string.translate(str.maketrans('', '', string.punctuation))
-#print(new_string)
+#print_word_freq("praise_song_for_the_day.txt")
 
-def print_word_freq(file):
-    """Read in `file` and print out the frequency of words in that file. Your code goes here."""
-    print (f"Your file is: {file}")
-    with open(file) as open_file:
-        read_file = open_file.read()
-    print(read_file)
+
+
+
+
+
 
 #python program that allows you to run from the command line and pass the name of the file
 
-if __name__ == "__main__":
-    import argparse
-    from pathlib import Path
+# if __name__ == "__main__":
+#     import argparse
+#     from pathlib import Path
 
-    parser = argparse.ArgumentParser(
-        description='Get the word frequency in a text file.')
-    parser.add_argument('file', help='file to read')
-    args = parser.parse_args()
+#     parser = argparse.ArgumentParser(
+#         description='Get the word frequency in a text file.')
+#     parser.add_argument('file', help='file to read')
+#     args = parser.parse_args()
 
-    file = Path(args.file)
-    if file.is_file():
-        print_word_freq(file)
-    else:
-        print(f"{file} does not exist!")
-        exit(1)
+#     file = Path(args.file)
+#     if file.is_file():
+#         print_word_freq(file)
+#     else:
+#         print(f"{file} does not exist!")
+#         exit(1)
