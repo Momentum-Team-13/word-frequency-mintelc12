@@ -6,6 +6,19 @@ STOP_WORDS = [
 
 import string
 
+
+title = """
+  _____  _      _   _                              
+ |  __ \(_)    | | (_)                             
+ | |  | |_  ___| |_ _  ___  _ __   __ _ _ __ _   _ 
+ | |  | | |/ __| __| |/ _ \| '_ \ / _` | '__| | | |
+ | |__| | | (__| |_| | (_) | | | | (_| | |  | |_| |
+ |_____/|_|\___|\__|_|\___/|_| |_|\__,_|_|   \__, |
+                                              __/ |
+                                             |___/ 
+                                            """
+print(title)
+
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file. Your code goes here."""
     print (f"Your file is: {file}")
@@ -36,8 +49,6 @@ def print_word_freq(file):
     for i in sort_unique_words[:10]:
         print(f'{i[0]:10} | {i[1]} {"*" * i[1]}')
     # print(unique_words)
-
-
 
 
 #python program that allows you to run from the command line and pass the name of the file
